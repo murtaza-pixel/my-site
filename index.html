@@ -12,20 +12,19 @@
     body {
       margin: 0;
       font-family: 'Cairo', sans-serif;
-      background-color: #f5f7fa;
+      background-color: #f0f2f5;
       color: #333;
       scroll-behavior: smooth;
-      line-height: 1.6;
     }
 
+    /* ---------- الهيدر ---------- */
     header {
       background: linear-gradient(90deg, #0d3b66, #093358);
       color: white;
-      padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
 
     nav {
@@ -34,27 +33,21 @@
       align-items: center;
       width: 90%;
       margin: auto;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      padding: 15px 0;
     }
 
     .logo-text {
-      font-size: 1.7em;
+      font-size: 1.8em;
       font-weight: bold;
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
     nav ul {
       display: flex;
-      list-style: none;
       gap: 25px;
-      padding: 0;
+      list-style: none;
       margin: 0;
+      padding: 0;
     }
 
     nav a {
@@ -69,15 +62,16 @@
       transform: translateY(-3px);
     }
 
+    /* ---------- قسم البطل ---------- */
     .hero {
-      background: url('https://images.unsplash.com/photo-1591187927766-23f6fbc62e8e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-      height: 400px;
+      height: 450px;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
       color: white;
       text-align: center;
-      position: relative;
+      background: url('https://images.unsplash.com/photo-1591187927766-23f6fbc62e8e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
     }
 
     .hero::after {
@@ -91,14 +85,14 @@
     .hero h1 {
       position: relative;
       z-index: 1;
-      font-size: 2.8em;
+      font-size: 3em;
       padding: 20px 30px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      max-width: 90%;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
       backdrop-filter: blur(5px);
     }
 
+    /* ---------- الأقسام ---------- */
     section {
       padding: 60px 10%;
       position: relative;
@@ -111,33 +105,55 @@
       text-align: center;
     }
 
+    p {
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+
+    /* ---------- الخدمات والمشاريع ---------- */
     .services, .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 25px;
     }
 
     .card {
-      background: rgba(255,255,255,0.9);
-      padding: 25px;
+      position: relative;
+      background-color: #fff;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-      backdrop-filter: blur(5px);
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.4s, box-shadow 0.4s;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-      background: rgba(255,255,255,1);
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.4s;
     }
 
-    .card::before {
-      content: '🚚';
-      font-size: 1.5em;
-      margin-left: 8px;
+    .card:hover img {
+      transform: scale(1.1);
     }
 
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #0d3b66;
+      font-size: 1.4em;
+    }
+
+    .card-content p {
+      margin: 10px 0 0 0;
+      color: #555;
+    }
+
+    /* ---------- نموذج التواصل ---------- */
     form input, form textarea {
       width: 100%;
       padding: 14px;
@@ -172,6 +188,7 @@
       transform: translateY(-2px);
     }
 
+    /* ---------- الفوتر ---------- */
     footer {
       background-color: #1f242d;
       color: #ccc;
@@ -183,7 +200,7 @@
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
       }
 
       .hero h1 {
@@ -216,19 +233,11 @@
     <h1>حلول نقل موثوقة وآمنة لجميع احتياجاتك</h1>
   </section>
 
-  <!-- محتوى بديل عن الفيديو -->
-  <section id="promo-text">
-    <h2>لماذا تختار شركة السديم؟</h2>
-    <p style="text-align: center; font-size: 1.1em; max-width: 800px; margin: auto;">
-      لأننا نمتلك خبرة طويلة في مجال النقل والخدمات اللوجستية، نحرص على تقديم أفضل الحلول بأعلى مستويات الجودة والكفاءة. فريقنا مدرب ومجهز لضمان سلامة البضائع ووصولها في الوقت المحدد.
-    </p>
-  </section>
-
   <!-- من نحن -->
   <section id="about">
     <h2>من نحن</h2>
-    <p>
-      شركة السديم للنقل هي شركة متخصصة في تقديم خدمات النقل والشحن داخل وخارج المدن، نلتزم بالدقة، السرعة، والأمان في كل عملية نقل نقوم بها.
+    <p style="text-align:center; max-width: 900px; margin:auto;">
+      شركة السديم للنقل متخصصة في تقديم خدمات النقل والشحن داخل وخارج المدن، نلتزم بالدقة، السرعة، والأمان في كل عملية نقل نقوم بها.
     </p>
   </section>
 
@@ -237,16 +246,25 @@
     <h2>خدماتنا</h2>
     <div class="services">
       <div class="card">
-        <h3>نقل البضائع</h3>
-        <p>نقل آمن وفعّال للبضائع بين المدن باستخدام أسطول حديث ومجهز.</p>
+        <img src="https://images.unsplash.com/photo-1591187927766-23f6fbc62e8e?auto=format&fit=crop&w=400&q=80" alt="نقل البضائع">
+        <div class="card-content">
+          <h3>نقل البضائع</h3>
+          <p>نقل آمن وفعّال للبضائع بين المدن باستخدام أسطول حديث ومجهز.</p>
+        </div>
       </div>
       <div class="card">
-        <h3>الشحن اللوجستي</h3>
-        <p>حلول شاملة لإدارة سلاسل الإمداد والخدمات اللوجستية للشركات.</p>
+        <img src="https://images.unsplash.com/photo-1581093588401-12f1b1a56c3c?auto=format&fit=crop&w=400&q=80" alt="الشحن اللوجستي">
+        <div class="card-content">
+          <h3>الشحن اللوجستي</h3>
+          <p>حلول شاملة لإدارة سلاسل الإمداد والخدمات اللوجستية للشركات.</p>
+        </div>
       </div>
       <div class="card">
-        <h3>خدمات النقل السريع</h3>
-        <p>نقدم خدمات نقل سريع داخل المدينة مع التوصيل في نفس اليوم.</p>
+        <img src="https://images.unsplash.com/photo-1611162617217-5fc96a7b5d83?auto=format&fit=crop&w=400&q=80" alt="النقل السريع">
+        <div class="card-content">
+          <h3>النقل السريع</h3>
+          <p>خدمات نقل سريع داخل المدينة مع التوصيل في نفس اليوم.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -256,16 +274,25 @@
     <h2>مشاريعنا</h2>
     <div class="projects">
       <div class="card">
-        <h3>نقل معدات ثقيلة</h3>
-        <p>نقل آمن واحترافي لمعدات صناعية ثقيلة بين مواقع المشاريع.</p>
+        <img src="https://images.unsplash.com/photo-1581091215367-1d2c5c1ef2e0?auto=format&fit=crop&w=400&q=80" alt="معدات ثقيلة">
+        <div class="card-content">
+          <h3>نقل معدات ثقيلة</h3>
+          <p>نقل آمن واحترافي لمعدات صناعية ثقيلة بين مواقع المشاريع.</p>
+        </div>
       </div>
       <div class="card">
-        <h3>خدمات نقل لشركات التجزئة</h3>
-        <p>توصيل مستمر للمتاجر والمستودعات وفق جدول زمني دقيق.</p>
+        <img src="https://images.unsplash.com/photo-1591187723564-4d123d0b7e24?auto=format&fit=crop&w=400&q=80" alt="شركات التجزئة">
+        <div class="card-content">
+          <h3>خدمات لشركات التجزئة</h3>
+          <p>توصيل مستمر للمتاجر والمستودعات وفق جدول زمني دقيق.</p>
+        </div>
       </div>
       <div class="card">
-        <h3>نقل منزلي</h3>
-        <p>خدمة نقل الأثاث والمحتويات المنزلية بأمان داخل المدن.</p>
+        <img src="https://images.unsplash.com/photo-1601597116755-1fcf04e935eb?auto=format&fit=crop&w=400&q=80" alt="نقل منزلي">
+        <div class="card-content">
+          <h3>نقل منزلي</h3>
+          <p>خدمة نقل الأثاث والمحتويات المنزلية بأمان داخل المدن.</p>
+        </div>
       </div>
     </div>
   </section>
