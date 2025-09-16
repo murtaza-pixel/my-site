@@ -19,7 +19,7 @@
     }
 
     header {
-      background-color: #0d3b66;
+      background: linear-gradient(90deg, #0d3b66, #093358);
       color: white;
       padding: 15px 0;
       position: sticky;
@@ -43,9 +43,10 @@
     }
 
     .logo-text {
-      font-size: 1.5em;
+      font-size: 1.7em;
       font-weight: bold;
       color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     }
 
     nav ul {
@@ -60,39 +61,53 @@
       color: white;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
     }
 
     nav a:hover {
       color: #ffd166;
+      transform: translateY(-3px);
     }
 
     .hero {
-      background-color: #0d3b66;
-      height: 300px;
+      background: url('https://images.unsplash.com/photo-1591187927766-23f6fbc62e8e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      height: 400px;
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
       text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background-color: rgba(13,59,102,0.6);
+      z-index: 0;
     }
 
     .hero h1 {
-      font-size: 2.5em;
-      padding: 20px;
+      position: relative;
+      z-index: 1;
+      font-size: 2.8em;
+      padding: 20px 30px;
       background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
+      border-radius: 12px;
       max-width: 90%;
+      backdrop-filter: blur(5px);
     }
 
     section {
       padding: 60px 10%;
+      position: relative;
     }
 
     h2 {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: #0d3b66;
-      font-size: 2em;
+      font-size: 2.2em;
       text-align: center;
     }
 
@@ -103,48 +118,58 @@
     }
 
     .card {
-      background-color: #ffffff;
+      background: rgba(255,255,255,0.9);
       padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      backdrop-filter: blur(5px);
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+      background: rgba(255,255,255,1);
     }
 
     .card::before {
       content: '🚚';
-      font-size: 1.4em;
+      font-size: 1.5em;
       margin-left: 8px;
     }
 
     form input, form textarea {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
+      padding: 14px;
+      margin: 12px 0;
       border: 1px solid #ccc;
-      border-radius: 7px;
+      border-radius: 10px;
       font-family: inherit;
       font-size: 1em;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #0d3b66;
+      box-shadow: 0 0 8px rgba(13,59,102,0.3);
+      outline: none;
     }
 
     form button {
       background-color: #0d3b66;
       color: white;
       border: none;
-      padding: 12px 25px;
-      border-radius: 7px;
+      padding: 14px 30px;
+      border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
       font-size: 1.1em;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, transform 0.3s;
     }
 
     form button:hover {
       background-color: #093358;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -261,7 +286,6 @@
     <p>&copy; 2025 شركة السديم للنقل - جميع الحقوق محفوظة</p>
   </footer>
 
-  <!-- سكريبت بسيط للتنبيه -->
   <script>
     function submitForm(e) {
       e.preventDefault();
